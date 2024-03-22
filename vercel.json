@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/employeemanagement/wsgi.py": {
-      "maxLambdaSize": "15mb"
+      
     }
   },
   "routes": [

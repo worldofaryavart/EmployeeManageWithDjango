@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+    .centered-content {
+      text-align: center;
+    }
+    .bold-white-outline {
+      font-weight: bold;
+      color: white;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+    .box-container {
+      border: 1px solid #000;
+      padding: 10px;
+      display: inline-block;
+      margin: auto;
+    }
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .custom-table th, .custom-table td {
+      border: 1px solid #000;
+      padding: 5px;
+    }
+    .custom-btn {
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+      padding: 5px 10px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+    }
+    .custom-btn:hover {
+      background-color: grey;
+    }
+  </style>
+
+  <div class="centered-content">
+    <h2 class="bold-white-outline">Search Employee Office Details</h2>
+    <div class="box-container">
+      <form method="get" action="{% url 'search_office' %}" style="margin-bottom: 20px;">
+        <input type="text" name="query" placeholder="Search by name" style="margin-right: 10px;">
+        <button type="submit" class="custom-btn">Search</button>
+      </form>
+      <table class="custom-table">
+        <tr>
+          <th>EmployeeCode</th>
+          <th>Name</th>
+          <th>Post</th>
+          <th>Joining Date</th>
+          <th>Basic Pay</th>
+        </tr>
+        {% for office in office_data %}
+        <tr>
+          <td>{{ office.ecode }}</td>
+          <td>{{ office.name }}</td>
+          <td>{{ office.post }}</td>
+          <td>{{ office.joining }}</td>
+          <td>{{ office.basicpay }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock %}

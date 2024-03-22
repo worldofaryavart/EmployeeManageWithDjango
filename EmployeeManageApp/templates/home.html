@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <style>
+    .text-white {
+      color: white;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    }
+    .display-4 {
+      font-size: 3rem; /* Increase font size for heading */
+    }
+    .lead {
+      border: 2px solid black;
+      border-radius: 10px;
+      height: 160px;
+      width: 800px;
+      font-size: 1.5rem;
+      font-style: normal;
+      text-align: center;
+      padding: 40px;
+
+
+    }
+    .btn-primary {
+      background-color: black; /* Change button background color to black */
+      color: white; /* Change button text color to white */
+    }
+    .btn-primary:hover{
+      background-color: rgb(96, 96, 96);
+    }
+
+    /* making div center  */
+    .div-center{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .get-start{
+      font-size: 30px;
+      border: 2px solid white;
+      border-radius: 20px;
+      margin: 10px 5px;
+      padding: 15px 20px;
+    }
+    
+  </style>
+
+  <div class="container-fluid p-0">
+    <div class="bg-gradient vh-100 d-flex align-items-center justify-content-center">
+      <div class="text-center text-white div-center">
+        <h1 class="display-4 p-10 my-50">Welcome to Employee Management Website</h1>
+        <p class="lead">Welcome to our Employee Management Website, where managing your team is made simple and efficient. With intuitive features, you can add, delete, modify, and search through personal, office, and salary data, ensuring a seamless management experience for your entire workforce. Embrace the ease of comprehensive employee administration at your fingertips.</p>
+        <a href="{% url 'personal_list' %}" class="get-start btn btn-primary btn-lg">Get Started</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
